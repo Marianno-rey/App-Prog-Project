@@ -8,6 +8,8 @@ import javafx.scene.layout.AnchorPane;
 
 public class MainController {
 	@FXML
+	private AnchorPane mainPane;
+	@FXML
 	private Button btnFindAttractions;
 	
 	@FXML
@@ -47,14 +49,13 @@ public class MainController {
 	
 	public void scnBookHotel()
 	{
-		try {
-			AnchorPane apBookHotel = (AnchorPane)FXMLLoader.load(getClass().getResource("BookHotel.fxml"));
-			Scene scene = new Scene(apBookHotel,800,500);
-			application.Main.setScene(scene);
-		} catch(Exception e) {
-			e.getSuppressed();
-			System.out.println(e.getMessage());
-		}
+		public void scnBookHotel(ActionEvent e) throws IOException { // Function to go Hotel FXML after clicking on the button
+		mainPane = FXMLLoader.load(getClass().getResource("BookHotel.fxml"));
+		Scene scene = new Scene(mainPane);
+		Stage window = (Stage) ((Node) e.getSource()).getScene().getWindow();
+		window.setScene(scene);
+		window.show();
+	}
 	}
 	
 	public void scnFlights()
