@@ -7,8 +7,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
-<AnchorPane xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8">
+<AnchorPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.HotelController">
    <children>
       <ImageView fitHeight="534.0" fitWidth="831.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -20,5 +19,10 @@
             <Font name="Tahoma Bold" size="24.0" />
          </font>
       </Label>
+      <Button fx:id="btnMain" layoutX="8.0" layoutY="6.0" mnemonicParsing="false" onAction="#showMain" opacity="0.82" prefHeight="61.0" prefWidth="206.0" style="-fx-background-color: #FF000000;" text="Travella" textFill="#009e67">
+         <font>
+            <Font name="Brush Script MT Italic" size="48.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>
