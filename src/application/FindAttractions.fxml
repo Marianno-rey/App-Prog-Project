@@ -7,8 +7,7 @@
 <?import javafx.scene.text.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
-<AnchorPane xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8">
+<AnchorPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.AttractionsController">
    <children>
       <AnchorPane>
          <children>
@@ -22,6 +21,11 @@
                   <Font name="Tahoma Bold" size="24.0" />
                </font>
             </Label>
+            <Button fx:id="btnMain" layoutY="-4.0" mnemonicParsing="false" onAction="#showMain" opacity="0.82" prefHeight="61.0" prefWidth="206.0" style="-fx-background-color: #FF000000;" text="Travella" textFill="#009e67">
+               <font>
+                  <Font name="Brush Script MT Italic" size="48.0" />
+               </font>
+            </Button>
          </children>
       </AnchorPane>
    </children>
