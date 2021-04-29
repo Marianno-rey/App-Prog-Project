@@ -16,22 +16,22 @@
                   <Image url="@assets/images/lake-696098_1280.jpg" />
                </image>
             </ImageView>
-            <Button layoutX="437.0" layoutY="121.0" mnemonicParsing="false" opacity="0.82" prefHeight="25.0" prefWidth="284.0" style="-fx-background-color: #FF000000;" text="Book Hotel" textFill="#1dd5ff">
+            <Button fx:id="btnBookHotel" layoutX="437.0" layoutY="121.0" mnemonicParsing="false" opacity="0.82" prefHeight="25.0" prefWidth="284.0" style="-fx-background-color: #FF000000;" text="Book Hotel" textFill="#1dd5ff">
                <font>
                   <Font name="Tahoma Bold" size="24.0" />
                </font>
             </Button>
-            <Button layoutX="437.0" layoutY="167.0" mnemonicParsing="false" opacity="0.82" prefHeight="25.0" prefWidth="284.0" style="-fx-background-color: #FF000000;" text="Book Flights" textFill="#1dd5ff">
+            <Button fx:id="btnBookFlights" layoutX="437.0" layoutY="167.0" mnemonicParsing="false" onAction="#scnFlights" opacity="0.82" prefHeight="25.0" prefWidth="284.0" style="-fx-background-color: #FF000000;" text="Book Flights" textFill="#1dd5ff">
                <font>
                   <Font name="Tahoma Bold" size="24.0" />
                </font>
             </Button>
-            <Button layoutX="437.0" layoutY="75.0" mnemonicParsing="false" opacity="0.82" prefHeight="46.0" prefWidth="284.0" style="-fx-background-color: #FF000000;" text="Find Attractions" textFill="#1dd5ff">
+            <Button fx:id="btnFindAttractions" layoutX="437.0" layoutY="75.0" mnemonicParsing="false" opacity="0.82" prefHeight="46.0" prefWidth="284.0" style="-fx-background-color: #FF000000;" text="Find Attractions" textFill="#1dd5ff">
                <font>
                   <Font name="Tahoma Bold" size="24.0" />
                </font>
             </Button>
-            <Button layoutX="437.0" layoutY="213.0" mnemonicParsing="false" opacity="0.82" prefHeight="25.0" prefWidth="284.0" style="-fx-background-color: #FF000000;" text="Rent a car" textFill="#1dd5ff">
+            <Button fx:id="btnRentCar" layoutX="437.0" layoutY="213.0" mnemonicParsing="false" opacity="0.82" prefHeight="25.0" prefWidth="284.0" style="-fx-background-color: #FF000000;" text="Rent a car" textFill="#1dd5ff">
                <font>
                   <Font name="Tahoma Bold" size="24.0" />
                </font>
