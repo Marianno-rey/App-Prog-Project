@@ -17,7 +17,7 @@
                   <Image url="@assets/images/lake-696098_1280.jpg" />
                </image>
             </ImageView>
-            <Label alignment="TOP_CENTER" layoutY="14.0" prefHeight="30.0" prefWidth="804.0" text="Book Flights" textAlignment="CENTER" textFill="#0055ff">
+            <Label alignment="TOP_CENTER" layoutY="14.0" prefHeight="30.0" prefWidth="804.0" text="Find Attractions" textAlignment="CENTER" textFill="#0055ff">
                <font>
                   <Font name="Tahoma Bold" size="24.0" />
                </font>
