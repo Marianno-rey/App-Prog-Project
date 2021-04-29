@@ -84,7 +84,7 @@ public class HotelController {
 																							// while
 																							// loop
 				results.setText(
-						"Found result: Country: " + country + ", City: " + city + " for the price of: " + price + "\n");
+						"Found result: \nCountry: " + country + ".\nCity: " + city + " for the price of: " + price + ".\n");
 				found = true; // Change the value of found to true
 			}
 		}
