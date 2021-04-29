@@ -28,7 +28,7 @@ public class HotelController {
 	@FXML
 	private TextField priceR1, priceR2;
 	@FXML
-	private TextField results;
+	private TextField results, results2, results3, results4;
 	@FXML
 	private Button getResults;
 	@FXML
@@ -39,6 +39,8 @@ public class HotelController {
 	private boolean found = false;
 	@FXML
 	private AnchorPane mainPane;
+	// Counter for switch statement
+	int counter = 0;
 
 	@FXML
 	public void getResultsFunc() throws FileNotFoundException {
@@ -67,24 +69,32 @@ public class HotelController {
 			city = scan.next(); // Assign the city to the variable
 			price = scan.next(); // Assign the price to the variable
 			if (userCountry.equals(country) && userCity.equals(city)
-					&& (Integer.parseInt(userPrice1) <= Integer.parseInt(price)
-							|| Integer.parseInt(price) <= Integer.parseInt(userPrice2))) { // Compare
-																							// every
-																							// field
-																							// the
-																							// user
-																							// input
-																							// and
-																							// compare
-																							// inside
-																							// the
-																							// file
-																							// in
-																							// a
-																							// while
-																							// loop
-				results.setText(
-						"Found result: \nCountry: " + country + ".\nCity: " + city + " for the price of: " + price + ".\n");
+					&& (Integer.parseInt(userPrice1.replaceAll("\\s", "")) <= Integer
+							.parseInt(price.replaceAll("\\s", "")))
+					&& (Integer.parseInt(price.replaceAll("\\s", "")) <= Integer
+							.parseInt(userPrice2.replaceAll("\\s", "")))
+					&& counter < 4) { // Compare every field from the user input with the contents of the file
+
+				switch (counter) { // Switch statement to display more than one hotel
+				case 0:
+					results.setText(country + ", " + city + ". $" + price + " per night.");
+					counter++;
+					break;
+				case 1:
+					results2.setText(country + ", " + city + ". $" + price + " per night.");
+					counter++;
+					break;
+				case 2:
+					results3.setText(country + ", " + city + ". $" + price + " per night.");
+					counter++;
+					break;
+				case 3:
+					results4.setText(country + ", " + city + ". $" + price + " per night.");
+					counter++;
+					break;
+				default:
+					break;
+				}
 				found = true; // Change the value of found to true
 			}
 		}
@@ -93,7 +103,7 @@ public class HotelController {
 			results.setText("No results found");
 
 		}
-		scan.close(); // Close scanner
+		scan.close();
 	}
 
 	public void goHomeFunc(ActionEvent e) throws IOException { // Go to the main
