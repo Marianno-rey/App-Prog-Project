@@ -93,6 +93,7 @@ public class HotelController {
 			results.setText("No results found");
 
 		}
+		scan.close(); // Close scanner
 	}
 
 	public void goHomeFunc(ActionEvent e) throws IOException { // Go to the main
