@@ -1,12 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.image.*?>
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
-<AnchorPane prefHeight="799.0" prefWidth="500.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="application.MainController">
+<AnchorPane prefHeight="799.0" prefWidth="499.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MainController">
    <children>
-      <AnchorPane layoutX="-8.0" layoutY="-1.0" prefHeight="800.0" prefWidth="506.0" />
+      <AnchorPane layoutX="-8.0" layoutY="-1.0" prefHeight="799.0" prefWidth="512.0">
+         <children>
+            <ImageView fitHeight="807.0" fitWidth="507.0" layoutX="8.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@assets/images/lake-696098_500x800.jpg" />
+               </image>
+            </ImageView>
+         </children></AnchorPane>
    </children>
 </AnchorPane>
