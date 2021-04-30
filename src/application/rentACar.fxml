@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <AnchorPane layoutX="0" layoutY="0" prefHeight="500.0" prefWidth="800.0">
+         <children>
+            <ImageView fitHeight="500.0" fitWidth="800.0" pickOnBounds="true">
+               <image>
+                  <Image url="@../../../../../../Downloads/pexels-trace-constant-707046.jpg" />
+               </image></ImageView>
+            <Pane layoutX="77.0" layoutY="25.0" prefHeight="167.0" prefWidth="640.0" style="-fx-background-color: white; -fx-background-radius: 10;">
+               <children>
+                  <TextField layoutX="14.0" layoutY="14.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="65.0" prefWidth="250.0" promptText="Pick-up location" style="-fx-border-color: black; -fx-border-radius: 10; -fx-background-radius: 10;" />
+                  <TextField layoutX="376.0" layoutY="14.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="65.0" prefWidth="250.0" promptText="Enter price" style="-fx-border-color: black; -fx-background-radius: 10; -fx-border-radius: 10;" />
+                  <Button layoutX="243.0" layoutY="88.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="67.0" prefWidth="155.0" style="-fx-background-color: #3662d8; -fx-border-radius: 10;" text="Search" />
+               </children>
+            </Pane>
+         </children></AnchorPane>
+   </children>
+</AnchorPane>
