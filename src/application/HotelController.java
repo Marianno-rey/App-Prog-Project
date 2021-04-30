@@ -47,7 +47,11 @@ public class HotelController {
 	int counter = 0;
 
 	@FXML
-	public void getResultsFunc() throws FileNotFoundException {
+		public void getResultsFunc() throws FileNotFoundException {
+		results.clear();
+		results2.clear();
+		results3.clear();
+		results4.clear();
 		found = false; // Everytime the button is pressed we set the "Found" to
 						// false
 		String userCountry = countryField.getText(); // Get User Input
@@ -105,10 +109,14 @@ public class HotelController {
 		if (found == false) { // if found has not been changed; we display a not
 								// found message
 			results.setText("No results found");
+			results2.setText("No results found");
+			results3.setText("No results found");
+			results4.setText("No results found");
 
 		}
 		scan.close();
 	}
+
 
 	public void goHomeFunc(ActionEvent e) throws IOException { // Go to the main
 																// fxml file if
