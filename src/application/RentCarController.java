@@ -7,6 +7,8 @@ import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.input.MouseEvent;
 import application.RentCarModel;
+import javafx.scene.control.TextField;
+import javafx.scene.control.TextArea;
 
 public class RentCarController {
 	
@@ -20,6 +22,9 @@ public class RentCarController {
 
     	@FXML
     	private Button searchBtn;
+	
+	@FXML
+    	private TextArea resultsField;
 	
 	@FXML
 	public void showMain()
