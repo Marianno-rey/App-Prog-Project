@@ -11,12 +11,12 @@
    <children>
       <ImageView fitHeight="500.0" fitWidth="800.0" pickOnBounds="true">
          <image>
-            <Image url="@../../src/application/assets/images/Attractions_background.jpg" />
+            <Image url="@assets/images/Attractions_background.jpg" />
          </image>
       </ImageView>
       <ImageView fitHeight="89.0" fitWidth="343.0" layoutX="31.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../src/application/assets/images/Attractions_header.png" />
+            <Image url="@assets/images/Attractions_header.png" />
          </image>
       </ImageView>
       <Text fill="WHITE" layoutX="52.0" layoutY="129.0" strokeType="OUTSIDE" strokeWidth="0.0" text="City (ex: San Antonio)">
@@ -39,7 +39,7 @@
       <TextArea fx:id="monumentsField" layoutX="455.0" layoutY="176.0" prefHeight="266.0" prefWidth="315.0" />
       <ImageView fx:id="backBtn" fitHeight="59.0" fitWidth="65.0" layoutX="695.0" layoutY="24.0" onMouseClicked="#showMain" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../src/application/assets/images/backBtn.png" />
+            <Image url="@assets/images/backBtn.png" />
          </image>
       </ImageView>
    </children>
