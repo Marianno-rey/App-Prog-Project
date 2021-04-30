@@ -14,7 +14,7 @@ public class MainController {
 	 * This method will check which button was clicked then switch the Scene to the proper page
 	 */
 	@FXML
-	public void handleBtnClick(MouseEvent event) throws IOException {
+	public void handleAttractionsClick(MouseEvent event) throws IOException {
 		
 		root = (AnchorPane)FXMLLoader.load(getClass().getResource("Attractions.fxml"));
 		
@@ -28,7 +28,7 @@ public class MainController {
 	@FXML
 	public void handleRentalsClick(ActionEvent event) throws IOException {
 		
-		root = (AnchorPane)FXMLLoader.load(getClass().getResource("Rentals.fxml"));
+		root = (AnchorPane)FXMLLoader.load(getClass().getResource("RentCar.fxml"));
 		
 		Scene newScene = new Scene(root, 800, 500);
 		newScene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
