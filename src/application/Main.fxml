@@ -1,41 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.text.*?>
-<?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
+<?import javafx.scene.control.*?>
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MainController">
+<AnchorPane fx:id="root" prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MainController">
    <children>
-      <AnchorPane layoutX="-8.0" layoutY="-1.0" prefHeight="499.0" prefWidth="799.0">
-         <children>
-            <ImageView fitHeight="534.0" fitWidth="831.0" layoutX="8.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@assets/images/lake-696098_1280.jpg" />
-               </image>
-            </ImageView>
-            <Button fx:id="btnBookHotel" layoutX="437.0" layoutY="121.0" mnemonicParsing="false" onAction="#scnBookHotel" opacity="0.82" prefHeight="25.0" prefWidth="284.0" style="-fx-background-color: #FF000000;" text="Book Hotel" textFill="#1dd5ff">
-               <font>
-                  <Font name="Tahoma Bold" size="24.0" />
-               </font>
-            </Button>
-            <Button fx:id="btnBookFlights" layoutX="437.0" layoutY="167.0" mnemonicParsing="false" onAction="#scnFlights" opacity="0.82" prefHeight="25.0" prefWidth="284.0" style="-fx-background-color: #FF000000;" text="Book Flights" textFill="#1dd5ff">
-               <font>
-                  <Font name="Tahoma Bold" size="24.0" />
-               </font>
-            </Button>
-            <Button fx:id="btnFindAttractions" layoutX="437.0" layoutY="75.0" mnemonicParsing="false" onAction="#scnFindAttractions" opacity="0.82" prefHeight="46.0" prefWidth="284.0" style="-fx-background-color: #FF000000;" text="Find Attractions" textFill="#1dd5ff">
-               <font>
-                  <Font name="Tahoma Bold" size="24.0" />
-               </font>
-            </Button>
-            <Button fx:id="btnRentCar" layoutX="437.0" layoutY="213.0" mnemonicParsing="false" onAction="#scnRentCar" opacity="0.82" prefHeight="25.0" prefWidth="284.0" style="-fx-background-color: #FF000000;" text="Rent a car" textFill="#1dd5ff">
-               <font>
-                  <Font name="Tahoma Bold" size="24.0" />
-               </font>
-            </Button>
-         </children></AnchorPane>
+      <ImageView fitHeight="500.0" fitWidth="800.0" pickOnBounds="true">
+         <image>
+            <Image url="@../../src/application/assets/images/Main_background.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="140.0" fitWidth="445.0" layoutY="29.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../src/application/assets/images/Travella_logo.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="242.0" fitWidth="257.0" layoutX="39.0" layoutY="207.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../src/application/assets/images/car.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="140.0" fitWidth="360.0" layoutX="407.0" layoutY="29.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../src/application/assets/images/attractions.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="138.0" fitWidth="256.0" layoutX="324.0" layoutY="262.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../src/application/assets/images/flight.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="163.0" fitWidth="155.0" layoutX="598.0" layoutY="250.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../src/application/assets/images/hotel.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="attractionsBtn" layoutX="536.0" layoutY="186.0" mnemonicParsing="false" onMouseClicked="#handleAttractionsClick" text="Find attractions" />
+      <Button fx:id="rentalsBtn" layoutX="86.0" layoutY="417.0" mnemonicParsing="false" onMouseClicked="#handleRentalsClick" text="Find vehicle rentals" />
+      <Button fx:id="flightsBtn" layoutX="405.0" layoutY="417.0" mnemonicParsing="false" onMouseClicked="#handleFlightsClick" text="Find flights" />
+      <Button fx:id="hotelsBtn" layoutX="629.0" layoutY="417.0" mnemonicParsing="false" onMouseClicked="#handleHotelsClick" text="Find hotels" />
    </children>
 </AnchorPane>
