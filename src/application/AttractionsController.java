@@ -7,6 +7,7 @@ import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.control.TextField;
 import AttractionsModel;
+import javafx.scene.input.MouseEvent;
 
 public class AttractionsController {
 	
