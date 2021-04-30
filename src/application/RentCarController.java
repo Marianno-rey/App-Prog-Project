@@ -6,10 +6,20 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.input.MouseEvent;
+import application.RentCarModel;
 
 public class RentCarController {
+	
+	RentCarModel model = new RentCarModel();
+	
 	@FXML
 	private Button btnHome;
+	
+	@FXML
+    	private TextField priceField;
+
+    	@FXML
+    	private Button searchBtn;
 	
 	@FXML
 	public void showMain()
