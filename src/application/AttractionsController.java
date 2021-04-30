@@ -5,10 +5,14 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.control.TextField;
 
 public class AttractionsController {
 	@FXML
 	private Button btnHome;
+	
+	@FXML
+    	private TextField cityInput;
 	
 	@FXML
 	public void showMain()
@@ -23,5 +27,21 @@ public class AttractionsController {
 			System.out.println(e.getMessage());
 		}
 	}
+	
+	@FXML
+	public void handleSearch(MouseEvent event) {
+    		String city = cityInput.getText();
+   
+    		try {
+    			String monuments = model.getMonuments(city);
+        		String events = model.getEvents(city);
+        	
+        		monumentsField.setText(monuments);
+        		eventsField.setText(events);
+    		}
+    		catch (Exception e) {
+    		System.out.print(e);
+    		}
+    	}
 
 }
