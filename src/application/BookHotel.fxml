@@ -56,6 +56,7 @@
       <TextField fx:id="results2" layoutX="20.0" layoutY="364.0" prefHeight="25.0" prefWidth="207.0" />
       <TextField fx:id="results3" layoutX="20.0" layoutY="401.0" prefHeight="25.0" prefWidth="207.0" />
       <TextField fx:id="results4" layoutX="20.0" layoutY="439.0" prefHeight="25.0" prefWidth="207.0" />
+      <Button fx:id="addHotel" layoutX="250.0" layoutY="389.0" mnemonicParsing="false" onAction="#addHotelFunc" text="Add Hotel" />
       
    </children>
 </AnchorPane>
