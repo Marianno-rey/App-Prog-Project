@@ -18,7 +18,7 @@
                <children>
                   <TextField layoutX="14.0" layoutY="14.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="65.0" prefWidth="250.0" promptText="Pick-up location" style="-fx-border-color: black; -fx-border-radius: 10; -fx-background-radius: 10;" />
                   <TextField layoutX="376.0" layoutY="14.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="65.0" prefWidth="250.0" promptText="Enter price" style="-fx-border-color: black; -fx-background-radius: 10; -fx-border-radius: 10;" />
-                  <Button layoutX="243.0" layoutY="88.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="67.0" prefWidth="155.0" style="-fx-background-color: #3662d8; -fx-border-radius: 10;" text="Search" />
+                  <Button layoutX="243.0" layoutY="88.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#handleSearch" prefHeight="67.0" prefWidth="155.0" style="-fx-background-color: #3662d8; -fx-border-radius: 10;" text="Search" />
                </children>
             </Pane>
          </children></AnchorPane>
