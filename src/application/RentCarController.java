@@ -39,5 +39,11 @@ public class RentCarController {
 			System.out.println(e.getMessage());
 		}
 	}
+	
+	@FXML
+	public void handleSearch(MouseEvent e) {
+		int preferred_price = Integer.parseInt(priceField.getText());
+		resultsField.setText(model.getCars(preferred_price));
+	}
 
 }
