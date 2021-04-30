@@ -77,6 +77,14 @@ public class FlightsController {
 			{
 				System.out.println("Nothing Selected");
 			}
+			if (dpDepartureDate.getValue()==null)
+			{
+				Alert a = new Alert(AlertType.NONE);
+				a.setAlertType(AlertType.INFORMATION);
+				a.setContentText("You must have at least a departure date set!");
+				a.show();
+				return;
+			}
 		}
 		catch (Exception e)
 		{
@@ -155,6 +163,8 @@ public class FlightsController {
 
 			ArrayList quotes = (ArrayList)(result.get("Quotes"));
 
+			lvFlights.getItems().clear();
+			
 			for (int i = 0; i < quotes.size(); i++)
 			{
 				System.out.println(quotes.get(i));
