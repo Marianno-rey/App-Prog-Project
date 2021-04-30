@@ -1,0 +1,56 @@
+Toyota Corolla
+40
+Ford Ranger
+60
+Chevy cruze
+60
+Chevy Suburban
+80
+Ford f150
+70
+Volkswagen Golf
+40
+Honda CR-V
+55
+Kia Sorento
+45
+Ford Explorer
+70
+Nissan Rogue
+45
+Ford Escape
+35
+Chevrolet Tahoe
+75
+Honda Pilot
+35
+Kia Telluride
+60
+Honda Pilot
+82
+Hyundai Kona
+74
+Cadillac Escalade
+125
+BMW X5
+145
+Toyota 4Runner
+84
+Subaru Forester
+63
+Subaru Crosstrek
+54
+Dodge Durango
+45
+Audi Q7
+68
+Honda Passport
+52
+Jeep Wrangler
+77
+Volkswagen Atlas
+105
+Mazda CX9
+38
+Ford Expedition
+91

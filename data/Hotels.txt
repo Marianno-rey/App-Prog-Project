@@ -1,0 +1,19 @@
+hungary,debrecen,60
+jordan,amman,40
+usa,chicago,100
+usa,california,150
+usa,new york,200
+romania,oradea,70
+france,paris,170
+romania,bucharest,100
+sweden,stockholm,80
+india,new delhi,90
+lebanon,beirut,80
+italy,rome,120
+russia,moscow,65
+poland,warsaw,55
+portugal,lisbon,40
+peru,lima,60
+usa,chicago,170
+italy,rome,70
+italy,rome,90
