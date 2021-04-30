@@ -1,4 +1,10 @@
 # App-Prog-Project
-Our project, Travella, brought to you by The Yung Money Team
-featuring: Yzan Qaryouti, Marianno Reynoso, Truman Hickok, and Jeremy Cutrer
-Our app is an all in one planning app including booking flights, hotels, renting cars, and planning excursions. This app consolidates most of the information required for planning a vacation. You can compare flight options, hotel prices, car rentals and excursions all with real time data.
+Our project, Travella, brought to you by The Yung Money Team: Yzan Qaryouti, Marianno Reynoso, Truman Hickok, and Jeremy Cutrer
+
+Extra things you'll need to do to run our app:
+  1. In Project Properties, go to Java Compiler and change the Compiler Compliance Level to 1.8
+  2. Get an internet connection (for the API calls)
+
+Our app is an all in one travel planning app that can display available hotels, vehicle rentals, flights, events and monuments.
+
+No known bugs.
