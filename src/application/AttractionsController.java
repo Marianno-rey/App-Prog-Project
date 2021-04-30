@@ -19,6 +19,12 @@ public class AttractionsController {
     	private TextField cityInput;
 	
 	@FXML
+    	private TextArea eventsField;
+
+   	@FXML
+    	private TextArea monumentsField;
+	
+	@FXML
 	public void showMain()
 	{
 		try {
