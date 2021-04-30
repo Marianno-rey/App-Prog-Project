@@ -55,12 +55,12 @@ public class HotelController {
 		priceR1.clear();// Clear field
 		priceR2.clear();// Clear field
 
-		File file = new File("hotels.txt"); // Open hotels.txt file
+		File file = new File("data/hotels.txt"); // Open hotels.txt file
 		String country = ""; // Empty string variables
 		String city = "";
 		String price = "";
 
-		scan = new Scanner(new File("hotels.txt"));
+		scan = new Scanner(new File("data/hotels.txt"));
 		scan.useDelimiter("[,\n]"); // Use comma or new line as a delimeter to
 									// separate values
 
