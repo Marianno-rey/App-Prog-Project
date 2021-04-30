@@ -16,7 +16,7 @@
                   <Image url="@assets/images/lake-696098_1280.jpg" />
                </image>
             </ImageView>
-            <Label alignment="TOP_CENTER" layoutY="14.0" prefHeight="30.0" prefWidth="804.0" text="Book Flights" textAlignment="CENTER" textFill="#0055ff">
+            <Label alignment="TOP_CENTER" layoutY="14.0" prefHeight="30.0" prefWidth="804.0" text="Search and Book Flights" textAlignment="CENTER" textFill="#0055ff">
                <font>
                   <Font name="Tahoma Bold" size="24.0" />
                </font>
@@ -26,6 +26,51 @@
                   <Font name="Brush Script MT Italic" size="48.0" />
                </font>
             </Button>
+            <DatePicker fx:id="dpDepartureDate" layoutX="35.0" layoutY="327.0" />
+            <Label layoutX="35.0" layoutY="304.0" text="Departure Date" textFill="#00f7ff">
+               <font>
+                  <Font name="Tahoma Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="35.0" layoutY="144.0" text="Departure Airport" textFill="#00f7ff">
+               <font>
+                  <Font name="Tahoma Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="228.0" layoutY="144.0" text="Arrival Airport" textFill="#00f7ff">
+               <font>
+                  <Font name="Tahoma Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="228.0" layoutY="304.0" text="Arrival Date" textFill="#00f7ff">
+               <font>
+                  <Font name="Tahoma Bold" size="18.0" />
+               </font>
+            </Label>
+            <DatePicker fx:id="dpArrivalDate" layoutX="228.0" layoutY="327.0" />
+            <Button fx:id="btnFind" layoutX="35.0" layoutY="365.0" mnemonicParsing="false" onAction="#showFlights" prefHeight="74.0" prefWidth="368.0" text="Find Flights" />
+            <Label layoutX="228.0" layoutY="96.0" text="Arrival City" textFill="#00f7ff">
+               <font>
+                  <Font name="Tahoma Bold" size="18.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtArrivalCity" layoutX="228.0" layoutY="119.0" prefHeight="25.0" prefWidth="119.0" />
+            <TextField fx:id="txtDepartureCity" layoutX="35.0" layoutY="119.0" prefHeight="25.0" prefWidth="119.0" />
+            <Label layoutX="35.0" layoutY="96.0" text="Departure City" textFill="#00f7ff">
+               <font>
+                  <Font name="Tahoma Bold" size="18.0" />
+               </font>
+            </Label>
+            <ListView fx:id="lvDepartureAirport" layoutX="35.0" layoutY="167.0" prefHeight="134.0" prefWidth="174.0" />
+            <ListView fx:id="lvArrivalAirport" layoutX="228.0" layoutY="167.0" prefHeight="134.0" prefWidth="174.0" />
+            <ListView fx:id="lvFlights" layoutX="416.0" layoutY="119.0" prefHeight="323.0" prefWidth="375.0" />
+            <Label layoutX="416.0" layoutY="96.0" text="Flights" textFill="#00f7ff">
+               <font>
+                  <Font name="Tahoma Bold" size="18.0" />
+               </font>
+            </Label>
+            <Button layoutX="154.0" layoutY="119.0" mnemonicParsing="false" onAction="#txtDepartureCity_onChange" prefHeight="25.0" prefWidth="55.0" text="Search" />
+            <Button layoutX="347.0" layoutY="119.0" mnemonicParsing="false" onAction="#txtArrivalCity_onChange" prefHeight="25.0" prefWidth="55.0" text="Search" />
          </children>
       </AnchorPane>
    </children>
