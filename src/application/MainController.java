@@ -44,7 +44,7 @@ public class MainController {
 	@FXML
 	public void handleHotelsClick(MouseEvent event) throws IOException {
 		
-		root = (AnchorPane)FXMLLoader.load(getClass().getResource("Hotel.fxml"));
+		root = (AnchorPane)FXMLLoader.load(getClass().getResource("BookHotel.fxml"));
 		Scene newScene = new Scene(root, 800, 500);
 		newScene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 		Stage currentWindow = (Stage)((Node)event.getSource()).getScene().getWindow();
