@@ -5,6 +5,9 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.input.MouseEvent;
+import java.io.IOException;
+import javafx.scene.Node;
 
 public class MainController {
 	@FXML
@@ -26,7 +29,7 @@ public class MainController {
 	}
 	
 	@FXML
-	public void handleRentalsClick(ActionEvent event) throws IOException {
+	public void handleRentalsClick(MouseEvent event) throws IOException {
 		
 		root = (AnchorPane)FXMLLoader.load(getClass().getResource("RentCar.fxml"));
 		
@@ -50,7 +53,7 @@ public class MainController {
 	}
 	
 	@FXML
-	public void handleFlightsClick(ActionEvent event) throws IOException {
+	public void handleFlightsClick(MouseEvent event) throws IOException {
 		
 		root = (AnchorPane)FXMLLoader.load(getClass().getResource("Flights.fxml"));
 		
