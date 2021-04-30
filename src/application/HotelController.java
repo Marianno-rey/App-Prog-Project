@@ -1,9 +1,11 @@
 
 package application;
 
+import java.io.BufferedWriter;
 import java.io.File;
 
 import java.io.FileNotFoundException;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Scanner;
 
@@ -36,6 +38,8 @@ public class HotelController {
 	@FXML
 	private Button goHomeBtn;
 	@FXML
+	private Button addHotel;
+	@FXML
 	private boolean found = false;
 	@FXML
 	private AnchorPane mainPane;
@@ -55,12 +59,12 @@ public class HotelController {
 		priceR1.clear();// Clear field
 		priceR2.clear();// Clear field
 
-		File file = new File("data/hotels.txt"); // Open hotels.txt file
+		File file = new File("data/Hotels.txt"); // Open hotels.txt file
 		String country = ""; // Empty string variables
 		String city = "";
 		String price = "";
 
-		scan = new Scanner(new File("data/hotels.txt"));
+		scan = new Scanner(new File("data/Hotels.txt"));
 		scan.useDelimiter("[,\n]"); // Use comma or new line as a delimeter to
 									// separate values
 
@@ -114,5 +118,21 @@ public class HotelController {
 		Stage window = (Stage) ((Node) e.getSource()).getScene().getWindow();
 		window.setScene(scene);
 		window.show();
+	}
+	public void addHotelFunc() throws IOException{
+		String userCountry = countryField.getText(); // Get User Input
+		countryField.clear(); // Clear field
+		String userCity = cityField.getText();// Get User Input
+		cityField.clear();// Clear field
+		String userPrice = priceR1.getText();// Get User Input
+		priceR1.clear();// Clear field
+		priceR2.clear();// Clear field
+		FileWriter fw = new FileWriter("data/Hotels.txt",true);
+		BufferedWriter bw = new BufferedWriter(fw);
+		
+		bw.write("\n"+userCountry+","+userCity+","+userPrice); // Write the user input into the txt file
+		bw.close();
+		
+	
 	}
 }
