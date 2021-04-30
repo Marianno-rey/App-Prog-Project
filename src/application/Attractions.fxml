@@ -37,7 +37,7 @@
             <Font size="18.0" />
          </font></Text>
       <TextArea fx:id="monumentsField" layoutX="455.0" layoutY="176.0" prefHeight="266.0" prefWidth="315.0" />
-      <ImageView fx:id="backBtn" fitHeight="59.0" fitWidth="65.0" layoutX="695.0" layoutY="24.0" onMouseClicked="#handleBackBtnClick" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="backBtn" fitHeight="59.0" fitWidth="65.0" layoutX="695.0" layoutY="24.0" onMouseClicked="#showMain" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../src/application/assets/images/backBtn.png" />
          </image>
