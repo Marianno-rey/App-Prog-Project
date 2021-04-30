@@ -8,78 +8,58 @@ import javafx.scene.layout.AnchorPane;
 
 public class MainController {
 	@FXML
-	private AnchorPane mainPane;
-	@FXML
-	private Button btnFindAttractions;
+	public AnchorPane root;
 	
+	/*
+	 * This method will check which button was clicked then switch the Scene to the proper page
+	 */
 	@FXML
-	private Button btnBookHotel;
-	
-	@FXML
-	private Button btnBookFlights;
-	
-	@FXML
-	private Button btnRentCar;
-	
-	@FXML
-	public void showMain()
-	{
-		try {
-			//Load the main page
-			AnchorPane apMain = (AnchorPane)FXMLLoader.load(getClass().getResource("Main.fxml"));
-			Scene scene = new Scene(apMain,800,500);
-			application.Main.setScene(scene);
-		} catch(Exception e) {
-			e.getSuppressed();
-			System.out.println(e.getMessage());
-		}
+	public void handleBtnClick(MouseEvent event) throws IOException {
+		
+		root = (AnchorPane)FXMLLoader.load(getClass().getResource("Attractions.fxml"));
+		
+		Scene newScene = new Scene(root, 800, 500);
+		newScene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
+		Stage currentWindow = (Stage)((Node)event.getSource()).getScene().getWindow();
+		currentWindow.setScene(newScene);
+		currentWindow.show();
 	}
 	
-	public void scnFindAttractions()
-	{
-		try {
-			AnchorPane apFindAttractions = (AnchorPane)FXMLLoader.load(getClass().getResource("FindAttractions.fxml"));
-			Scene scene = new Scene(apFindAttractions,800,500);
-			application.Main.setScene(scene);
-		} catch(Exception e) {
-			e.getSuppressed();
-			System.out.println(e.getMessage());
-		}
+	@FXML
+	public void handleRentalsClick(ActionEvent event) throws IOException {
+		
+		root = (AnchorPane)FXMLLoader.load(getClass().getResource("Rentals.fxml"));
+		
+		Scene newScene = new Scene(root, 800, 500);
+		newScene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
+		Stage currentWindow = (Stage)((Node)event.getSource()).getScene().getWindow();
+		currentWindow.setScene(newScene);
+		currentWindow.show();
+		
 	}
 	
-	public void scnBookHotel()
-	{
-		public void scnBookHotel(ActionEvent e) throws IOException { // Function to go Hotel FXML after clicking on the button
-		mainPane = FXMLLoader.load(getClass().getResource("BookHotel.fxml"));
-		Scene scene = new Scene(mainPane);
-		Stage window = (Stage) ((Node) e.getSource()).getScene().getWindow();
-		window.setScene(scene);
-		window.show();
-	}
-	}
-	
-	public void scnFlights()
-	{
-		try {
-			AnchorPane apFlights = (AnchorPane)FXMLLoader.load(getClass().getResource("Flights.fxml"));
-			Scene scene = new Scene(apFlights,800,500);
-			application.Main.setScene(scene);
-		} catch(Exception e) {
-			e.getSuppressed();
-			System.out.println(e.getMessage());
-		}
+	@FXML
+	public void handleHotelsClick(MouseEvent event) throws IOException {
+		
+		root = (AnchorPane)FXMLLoader.load(getClass().getResource("Hotel.fxml"));
+		Scene newScene = new Scene(root, 800, 500);
+		newScene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
+		Stage currentWindow = (Stage)((Node)event.getSource()).getScene().getWindow();
+		currentWindow.setScene(newScene);
+		currentWindow.show();
 	}
 	
-	public void scnRentCar()
-	{
-		try {
-			AnchorPane apRentCar = (AnchorPane)FXMLLoader.load(getClass().getResource("RentCar.fxml"));
-			Scene scene = new Scene(apRentCar,800,500);
-			application.Main.setScene(scene);
-		} catch(Exception e) {
-			e.getSuppressed();
-			System.out.println(e.getMessage());
-		}
+	@FXML
+	public void handleFlightsClick(ActionEvent event) throws IOException {
+		
+		root = (AnchorPane)FXMLLoader.load(getClass().getResource("Flights.fxml"));
+		
+		Scene newScene = new Scene(root, 800, 500);
+		newScene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
+		Stage currentWindow = (Stage)((Node)event.getSource()).getScene().getWindow();
+		currentWindow.setScene(newScene);
+		currentWindow.show();
+		
 	}
 	
 }
