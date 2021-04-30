@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
 <?import java.lang.*?>
@@ -12,15 +13,18 @@
          <children>
             <ImageView fitHeight="500.0" fitWidth="800.0" pickOnBounds="true">
                <image>
-                  <Image url="@assets\images\Cars_bkgrnd.jpg" />
+                  <Image url="@assets/images/Cars_bkgrnd.jpg" />
                </image></ImageView>
             <Pane layoutX="77.0" layoutY="25.0" prefHeight="167.0" prefWidth="640.0" style="-fx-background-color: white; -fx-background-radius: 10;">
                <children>
                   <TextField layoutX="14.0" layoutY="14.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="65.0" prefWidth="250.0" promptText="Pick-up location" style="-fx-border-color: black; -fx-border-radius: 10; -fx-background-radius: 10;" />
-                  <TextField layoutX="376.0" layoutY="14.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="65.0" prefWidth="250.0" promptText="Enter price" style="-fx-border-color: black; -fx-background-radius: 10; -fx-border-radius: 10;" />
-                  <Button layoutX="243.0" layoutY="88.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#handleSearch" prefHeight="67.0" prefWidth="155.0" style="-fx-background-color: #3662d8; -fx-border-radius: 10;" text="Search" />
+                  <TextField fx:id="priceField" layoutX="376.0" layoutY="14.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="65.0" prefWidth="250.0" promptText="Enter price" style="-fx-border-color: black; -fx-background-radius: 10; -fx-border-radius: 10;" />
+                  <Button fx:id="searchBtn" layoutX="243.0" layoutY="88.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#handleSearch" prefHeight="67.0" prefWidth="155.0" style="-fx-background-color: #3662d8; -fx-border-radius: 10;" text="Search" />
                </children>
             </Pane>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+            <Text layoutX="374.0" layoutY="222.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Results" />
+            <TextArea fx:id="resultsField" layoutX="300.0" layoutY="240.0" prefHeight="200.0" prefWidth="200.0" />
          </children></AnchorPane>
    </children>
 </AnchorPane>
