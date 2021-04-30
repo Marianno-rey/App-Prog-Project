@@ -9,6 +9,8 @@ import java.util.HashMap;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.ListView;
@@ -42,6 +44,9 @@ public class FlightsController {
 	@FXML
 	private Button btnFind;	
 	
+	HashMap<String, Object> departureLocations = new HashMap<String,Object>();
+	HashMap<String, Object> arrivalLocations = new HashMap<String,Object>();
+	
 	@FXML
 	public void showMain()
 	{
@@ -59,13 +64,61 @@ public class FlightsController {
 	@FXML
 	public void showFlights() throws IOException
 	{
+		//hmap.get(lbxLookup.getSelectionModel().getSelectedItem().toString())
+		
+		//Check to see if an departure and arrival location has been set
+		try
+		{
+			if ((lvDepartureAirport.getSelectionModel().getSelectedItem().toString() != "")&&(lvArrivalAirport.getSelectionModel().getSelectedItem().toString() != ""))
+			{
+				System.out.println("Selected: " + lvDepartureAirport.getSelectionModel().getSelectedItem().toString());
+			}
+			else
+			{
+				System.out.println("Nothing Selected");
+			}
+		}
+		catch (Exception e)
+		{
+			System.out.println(e.getMessage());
+			Alert a = new Alert(AlertType.NONE);
+			a.setAlertType(AlertType.INFORMATION);
+			a.setContentText("Please select both a destination and arrival airport!");
+			a.show();
+			return;
+		}
+		
+		int departureindex = lvDepartureAirport.getSelectionModel().getSelectedIndex();
+		int arrivalindex = lvArrivalAirport.getSelectionModel().getSelectedIndex();
+		
+		String departureAirport;
+		String arrivalAirport;
+		
+		ArrayList departure_locations = (ArrayList)(departureLocations.get("Places"));
+		ArrayList arrival_locations = (ArrayList)(arrivalLocations.get("Places"));
+		
+		departureAirport = ((Map)departure_locations.get(departureindex)).get("PlaceId").toString();
+		arrivalAirport = ((Map)arrival_locations.get(departureindex)).get("PlaceId").toString();
+
+		System.out.println(departureAirport);
+		System.out.println(arrivalAirport);
+		
+		
+		
 		System.out.println("Attempting to send GET request");
 		//https://rapidapi.com/skyscanner/api/skyscanner-flight-search?endpoint=5aa1eab3e4b00687d3574279
 		try
 		{
+			URL url;
 			//Set the connection URL including any variables to post
-			URL url = new URL("https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/browsequotes/v1.0/US/USD/en-US/SFO-sky/JFK-sky/anytime?inboundpartialdate=anytime");
-			
+			if (dpArrivalDate.getValue()!= null)
+			{
+				url = new URL("https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/browsequotes/v1.0/US/USD/en-US/" + departureAirport + "/" + arrivalAirport + "/" + dpDepartureDate.getValue() + "?inboundpartialdate=" + dpArrivalDate.getValue());
+			}
+			else
+			{
+				url = new URL("https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/browsequotes/v1.0/US/USD/en-US/" + departureAirport + "/" + arrivalAirport + "/" + dpDepartureDate.getValue() + "?inboundpartialdate=anytime");	
+			}
 			//Create our connection
 			HttpURLConnection con = (HttpURLConnection) url.openConnection();
 			
@@ -97,29 +150,22 @@ public class FlightsController {
 			//Next we need to send this JSON data to an JSON structure to access easily
 			
 			Map<String, Object> result = new ObjectMapper().readValue(buffer, HashMap.class);
-			//ObjectMapper mapper = new ObjectMapper();
-			
-			
-			//Map<String, Object> jsonMap = new HashMap<String, Object>();
-			
-			//
-			//jsonMap = mapper.readValue(buffer, new TypeReference<Map<String,String>>(){});
-			
+
 			System.out.println("A");
-			
-			//for (int i = 0; i < ((Map)result.get("Quotes")).size(); i++)
-			//{
-			ArrayList test = (ArrayList)(result.get("Quotes"));
-			//}
-			
-			for (int i = 0; i < test.size(); i++)
+
+			ArrayList quotes = (ArrayList)(result.get("Quotes"));
+
+			for (int i = 0; i < quotes.size(); i++)
 			{
-				System.out.println(test.get(i));
+				System.out.println(quotes.get(i));
+				lvFlights.getItems().add(" - $" + ((Map)quotes.get(i)).get("MinPrice").toString() + " on " + dpDepartureDate.getValue() + " Direct Flight: " + ((Map)quotes.get(i)).get("Direct").toString());
 			}
 			
-			System.out.println("A: " + test);
+			System.out.println("A: " + quotes);
 			
-			//After sending to JSON structure, loop through the quotes and list them in a ListView
+			System.out.println("departure date: " + dpDepartureDate.getValue());
+			System.out.println("arrival date: " + dpArrivalDate.getValue());
+			
 		}
 		catch (Exception e)
 		{
@@ -167,17 +213,17 @@ public class FlightsController {
 				
 				Map<String, Object> result = new ObjectMapper().readValue(buffer, HashMap.class);
 				
-				ArrayList test = (ArrayList)(result.get("Places"));
+				ArrayList places = (ArrayList)(result.get("Places"));
 	
 				lvDepartureAirport.getItems().clear();
-				for (int i = 0; i < test.size(); i++)
+				for (int i = 0; i < places.size(); i++)
 				{
-					lvDepartureAirport.getItems().add(((Map)test.get(i)).get("PlaceName").toString());
+					lvDepartureAirport.getItems().add(((Map)places.get(i)).get("PlaceName").toString());
 				}
+
+				departureLocations = (HashMap<String, Object>) result;
 				
-				System.out.println("A: " + test);
-				
-				//After sending to JSON structure, loop through the quotes and list them in a ListView
+				System.out.println(departureLocations);
 			}
 			catch (Exception e)
 			{
@@ -225,17 +271,16 @@ public class FlightsController {
 				
 				Map<String, Object> result = new ObjectMapper().readValue(buffer, HashMap.class);
 				
-				ArrayList test = (ArrayList)(result.get("Places"));
+				ArrayList places = (ArrayList)(result.get("Places"));
 	
 				lvArrivalAirport.getItems().clear();
-				for (int i = 0; i < test.size(); i++)
+				for (int i = 0; i < places.size(); i++)
 				{
-					lvArrivalAirport.getItems().add(((Map)test.get(i)).get("PlaceName").toString());
+					lvArrivalAirport.getItems().add(((Map)places.get(i)).get("PlaceName").toString());
 				}
 				
-				System.out.println("A: " + test);
-				
-				//After sending to JSON structure, loop through the quotes and list them in a ListView
+				arrivalLocations = (HashMap<String, Object>) result;
+				System.out.println(arrivalLocations);
 			}
 			catch (Exception e)
 			{
