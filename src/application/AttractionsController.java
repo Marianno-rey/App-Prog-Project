@@ -6,8 +6,12 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.control.TextField;
+import AttractionsModel;
 
 public class AttractionsController {
+	
+	AttractionsModel model = new AttractionsModel();
+	
 	@FXML
 	private Button btnHome;
 	
