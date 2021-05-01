@@ -114,6 +114,7 @@ public class HotelController {
 			results4.setText("No results found");
 
 		}
+	 	counter=0;//reset counter
 		scan.close();
 	}
 
